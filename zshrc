@@ -1,6 +1,6 @@
 source /Users/maxweldsouza/.bash_profile
 export NVM_NO_USE=false
-export NVM_AUTO_USE=true
+export NVM_AUTO_USE=false
 export NVM_LAZY_LOAD=false
 
 # If you come from bash you might have to change your $PATH.
