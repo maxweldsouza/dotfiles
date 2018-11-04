@@ -67,6 +67,7 @@ plugins=(
     kubectl
     docker
     zsh-nvm
+    zsh-better-npm-completion
 )
 
 source $ZSH/oh-my-zsh.sh
