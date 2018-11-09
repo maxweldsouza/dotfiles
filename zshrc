@@ -1,4 +1,5 @@
 source /Users/maxweldsouza/.bash_profile
+export PATH="./node_modules/.bin/:$PATH"
 export NVM_NO_USE=false
 export NVM_AUTO_USE=false
 export NVM_LAZY_LOAD=false
@@ -57,16 +58,21 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-	git 
-	common-aliases 
-	npm 
-	alias-tips 
-	zsh-autosuggestions 
-	extract 
-	colored-man-pages
+    brew
+    git
+    common-aliases
+    npm
+    nvm
+    gulp
+    alias-tips
+    zsh-autosuggestions
+    extract
+    colored-man-pages
+    colorize
     kubectl
     docker
-    zsh-nvm
+    git-flow
+    redis-cli
     zsh-better-npm-completion
 )
 
