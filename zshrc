@@ -66,12 +66,7 @@ plugins=(
     alias-tips
     zsh-autosuggestions
     extract
-    colored-man-pages
     colorize
-    kubectl
-    docker
-    git-flow
-    redis-cli
     zsh-better-npm-completion
 )
 
