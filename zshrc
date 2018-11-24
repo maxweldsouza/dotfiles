@@ -155,7 +155,6 @@ export PATH=~/.local/bin:$PATH
 # ### }}}
 
 alias ll="exa -l"
-alias instatus="echo 172.31.220.33"
 alias gfirst="git log --oneline --reverse | head -n 1"
 alias gm="git commit -m"
 alias gds="git diff --staged"

@@ -1,3 +1,5 @@
+[alias]
+    s = status -s
 [user]
 	name = Maxwel Dsouza
 	email = maxellusionist@gmail.com
@@ -12,9 +14,28 @@
 [pull]
 	# Always pull with rebase
 	rebase = true
+
 [core]
 	# Pretty diff's using diff-so-fancy
     #pager = diff-so-fancy | less --tabs=4 -RFX
+    
+    # Treat spaces before tabs and all kinds of trailing whitespace as an error
+	# [default] trailing-space: looks for spaces at the end of a line
+	# [default] space-before-tab: looks for spaces before tabs at the beginning of a line
+	whitespace = space-before-tab,-indent-with-non-tab,trailing-space
+
+	# Make `git rebase` safer on macOS
+	# More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
+	trustctime = false
+
+	# Prevent showing files whose names contain non-ASCII symbols as unversioned.
+	# http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
+	precomposeunicode = false
+
+	# Speed up commands involving untracked files such as `git status`.
+	# https://git-scm.com/docs/git-update-index#_untracked_cache
+	untrackedCache = true
+
 [status]
 	showUntrackedFiles = all
 	# Sometimes a newly-added folder, since it's only one line in git status, can slip under the radar.
@@ -42,3 +63,6 @@
 	old = red bold
 	new = green bold
 	whitespace = red reverse
+[fetch]
+    # Before fetching, remove any remote-tracking references that no longer exist on the remote. Tags are not subject to pruning if they are fetched only because of the default tag auto-following or due to a --tags option. 
+    prune = true
