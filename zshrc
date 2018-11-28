@@ -62,6 +62,7 @@ plugins=(
     git
     common-aliases
     npm
+    nvm
     gulp
     alias-tips
     zsh-autosuggestions
