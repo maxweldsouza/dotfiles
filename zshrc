@@ -1,4 +1,7 @@
 source /Users/maxweldsouza/.bash_profile
+
+export DISABLE_RAVEN=true
+
 export PATH="./node_modules/.bin/:$PATH"
 export NVM_NO_USE=false
 export NVM_AUTO_USE=false
@@ -154,6 +157,7 @@ alias gfirst="git log --oneline --reverse | head -n 1"
 alias gm="git commit -m"
 alias gds="git diff --staged"
 alias cat="ccat"
+alias dsf="git diff --no-index | diff-so-fancy"
 
 SPACESHIP_PROMPT_ORDER=(
   time          # Time stamps section
