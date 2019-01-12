@@ -102,15 +102,16 @@ endif
 " Custom
 
 "Quickly move through buffers
-map <C-h> :bprev<CR>
-map <C-l> :bnext<CR>
+noremap <C-h> :bprev<CR>
+noremap <C-l> :bnext<CR>
 
 "Alternate buffer
-map <C-,> :b#<CR>
+noremap <C-,> :b#<CR>
 
 "Fast up down
-map <C-j> <C-d><CR>
-map <C-k> <C-u><CR>
+noremap <C-j> <C-d><CR>
+noremap <C-k> <C-u><CR>
+
 " Preserve undho history when switching buffers
 set hidden
 set nowrap
@@ -128,3 +129,23 @@ function! XTermPasteBegin()
 
 let @a = 'IObjectId( $a), j^'
 let @b = 'i" $a", j^'
+
+" vim-plug Plugin manager
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'https://github.com/tpope/vim-surround.git'
+
+" Easily edit vimrc
+nnoremap <leader>ev :vsplit ~/dotfiles/vimrc<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
+" Add double qutoes around a word
+nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
+nnoremap <leader>' viw<esc>a'<esc>bi'<esc>lel
+
