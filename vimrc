@@ -122,13 +122,10 @@ let &t_EI .= "\<Esc>[?2004l"
 inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
 
 function! XTermPasteBegin()
-      set pastetoggle=<Esc>[201~
-        set paste
-          return ""
-      endfunction
-
-let @a = 'IObjectId( $a), j^'
-let @b = 'i" $a", j^'
+    set pastetoggle=<Esc>[201~
+    set paste
+    return ""
+endfunction
 
 " vim-plug Plugin manager
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -148,4 +145,13 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 " Add double qutoes around a word
 nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
 nnoremap <leader>' viw<esc>a'<esc>bi'<esc>lel
+
+function ExtractObjectId()
+    :v/"_id" : ObjectId(/:normal dd
+    execute "%s/\"_id\" : //g"
+    execute "%s/\s\\+//g"
+endfunction
+
+nnoremap <leader>o :call ExtractObjectId()<cr>
+nnoremap <leader>g mzgg=G`z
 
