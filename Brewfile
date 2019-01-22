@@ -4,27 +4,40 @@ tap "homebrew/services"
 tap "caskroom/cask"
 
 # brew "awscli"
+brew "ccat"
 brew "curl"
-brew "exa"
 brew "diff-so-fancy"
+brew "exa"
 brew "git"
+brew "git-flow"
+brew "git-flow"
+brew "htop"
+brew "htop"
+brew "imagemagick"
 brew "jq"
+brew "jupyter"
+brew "kong"
 brew "macvim"
 brew "mongodb"
 brew "moreutils"
-brew "redis"
-brew "htop"
-brew "nvm"
-brew "python"
-brew "tmux"
 brew "mtr"
+
+    # allow mtr to run without sudo
+    mtrlocation=$(brew info mtr | grep Cellar | sed -e 's/ (.*//') #  e.g. `/Users/paulirish/.homebrew/Cellar/mtr/0.86`
+    sudo chmod 4755 $mtrlocation/sbin/mtr
+    sudo chown root $mtrlocation/sbin/mtr
+
 brew "nginx"
-brew "tree"
-brew "vim"
+brew "nvm"
+brew "ncdu"
+brew "redis"
 brew "rsync"
-brew "git-flow"
-brew "jupyter"
 brew "tldr"
+brew "tmux"
+brew "the_silver_searcher"
+brew "tldr"
+brew "tree"
+# brew "vim"
 
 cask "authy"
 cask "charles"
@@ -42,6 +55,7 @@ cask "pritunl"
 cask "ndm"
 cask "meld"
 cask "scroll-reverser"
+cask "java"
 
 mas "Monosnap", id: 540348655
 
