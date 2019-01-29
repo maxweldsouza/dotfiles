@@ -3,7 +3,7 @@
 	diff-image = "!f() { GIT_DIFF_IMAGE_ENABLED=1 git diff \"$@\"; }; f"
 [user]
 	name = Maxwel Dsouza
-	email = maxellusionist@gmail.com
+	email = maxweldsouza.in@gmail.com
 [push]
 	default = current
 [difftool "sourcetree"]
