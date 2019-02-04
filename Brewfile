@@ -38,6 +38,7 @@ brew "the_silver_searcher"
 brew "tldr"
 brew "tree"
 # brew "vim"
+brew "httpie"
 
 cask "authy"
 cask "charles"
