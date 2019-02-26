@@ -1,6 +1,7 @@
 [alias]
     s = status -s
 	diff-image = "!f() { GIT_DIFF_IMAGE_ENABLED=1 git diff \"$@\"; }; f"
+    pushf = "push --force-with-lease"
 [user]
 	name = Maxwel Dsouza
 	email = maxweldsouza.in@gmail.com
