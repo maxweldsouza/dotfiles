@@ -226,3 +226,7 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 source "/home/maxweldsouza/.oh-my-zsh/custom/themes/spaceship.zsh-theme"
 fpath=($fpath "/home/maxweldsouza/.zfunctions")
+
+# fnm
+export PATH=/home/maxweldsouza/.fnm:$PATH
+eval "`fnm env --multi`"
