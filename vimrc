@@ -77,6 +77,9 @@ set showcmd
 " Start scrolling three lines before the horizontal window border
 set scrolloff=3
 
+set relativenumber
+set rnu
+
 " Strip trailing whitespace (,ss)
 function! StripWhitespace()
     let save_cursor = getpos(".")
