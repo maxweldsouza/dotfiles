@@ -2,6 +2,7 @@ import React,{useState} from 'react';
 import styled from 'styled-components';
 import {LiveEditor, LiveError, LivePreview, LiveProvider} from 'react-live'
 import Page from "../components/Page";
+import { ChromePicker } from 'react-color';
 
 
 const editorStyle = {
@@ -18,12 +19,14 @@ function Button() {
     const [paddingY, setPaddingY] = useState(10);
     const [borderRadius, setBorderRadius] = useState(0);
     const [fontSize, setfontSize] = useState(12);
+    const [color, setcolor] = useState();
     const code = `
 const Button = styled.button\`
     border-radius: ${borderRadius}px;
     border: none;
     box-shadow: none;
-    color: red;
+    background: ${color};
+    color: white;
     cursor: pointer;
     padding: ${paddingY}px ${paddingX}px;
     font-size: ${fontSize}px;
@@ -48,6 +51,7 @@ render(<Button>Test</Button>)
             <input type="range" min="0" max="20" value={borderRadius} className="slider" id="myRange" onChange={e => setBorderRadius(e.target.value)}/>
             Font Size
             <input type="range" min="0" max="50" value={fontSize} className="slider" id="myRange" onChange={e => setfontSize(e.target.value)}/>
+            <ChromePicker color={color} onChange={c => setcolor(c.hex)}/>
             <LiveProvider code={code} scope={{styled}} noInline={true}>
                 <MarginBottom>
                 <LiveEditor style={editorStyle}/>
