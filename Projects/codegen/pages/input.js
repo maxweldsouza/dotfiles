@@ -20,19 +20,20 @@ const Grid = styled.div`
     gap: 15px;
 `;
 
-function Button() {
+function Input() {
     const [paddingX, setPaddingX] = useState(10);
     const [paddingY, setPaddingY] = useState(10);
     const [borderRadius, setBorderRadius] = useState(0);
     const [fontSize, setfontSize] = useState(12);
     const [color, setcolor] = useState("#000");
+    const [fontColor, setfontColor] = useState('#fff');
     const code = `
-const Button = styled.button\`
+const Text = styled.input\`
     border-radius: ${borderRadius}px;
     border: none;
     box-shadow: none;
     background: ${color};
-    color: white;
+    color: ${fontColor};
     cursor: pointer;
     padding: ${paddingY}px ${paddingX}px;
     font-size: ${fontSize}px;
@@ -45,16 +46,16 @@ const Button = styled.button\`
     
 \`
 
-render(<Button>Test</Button>)
+render(<Text type="text" value="Test"></Text>)
 `;
     return (
         <Page>
             <Head>
                 <title>
-                    Button
+                    Input
                 </title>
             </Head>
-            <h1>Button</h1>
+            <h1>Input</h1>
             <MarginBottom margin={50}>
                 <Grid>
                     Padding X
@@ -95,6 +96,8 @@ render(<Button>Test</Button>)
                     />
                     Background
                     <ColorPicker color={color} onChange={(c) => setcolor(c)} />
+                    Font Color
+                    <ColorPicker color={fontColor} onChange={(c) => setfontColor(c)} />
                 </Grid>
             </MarginBottom>
             <LiveProvider code={code} scope={{ styled }} noInline={true}>
@@ -112,4 +115,4 @@ render(<Button>Test</Button>)
     );
 }
 
-export default Button;
+export default Input;

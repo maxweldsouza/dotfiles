@@ -12,10 +12,10 @@ const Container = styled.div`
     padding-top: 100px;
 `;
 const NavItem = styled.div`
-    height: 60px;
+    height: 45px;
     width: 100%;
     display: block;
-    line-height: 60px;
+    line-height: 45px;
     padding: 0 30px;
 `;
 
@@ -28,6 +28,9 @@ function Sidebar(props) {
                 </NavItem>
                 <NavItem>
                     <Link href={"/button"}>Button</Link>
+                </NavItem>
+                <NavItem>
+                    <Link href={"/input"}>Input</Link>
                 </NavItem>
             </Flexbox>
         </Container>

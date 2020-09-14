@@ -31,9 +31,9 @@ const Icon = styled(Inline)`
 `;
 
 function ColorPicker(props) {
-    const [color, setcolor] = useState("#000");
     const [open, setopen] = useState(false);
     const ref = useRef(null);
+    const color = props.color;
     useClickAway(ref, () => {
         setopen(false);
     });
@@ -48,7 +48,7 @@ function ColorPicker(props) {
                 <Container ref={ref}>
                     <ChromePicker
                         color={color}
-                        onChange={(c) => setcolor(c.hex)}
+                        onChange={(c) => props.onChange(c.hex)}
                     />
                 </Container>
             )}
