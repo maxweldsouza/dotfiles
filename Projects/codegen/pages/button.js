@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { LiveEditor, LiveError, LivePreview, LiveProvider } from "react-live";
 import Page from "../components/Page";
-import { ChromePicker } from "react-color";
 import Head from 'next/head';
+import ColorPicker from "../components/ColorPicker";
 
 const editorStyle = {
     background: "#1e1e1e",
@@ -25,7 +25,7 @@ function Button() {
     const [paddingY, setPaddingY] = useState(10);
     const [borderRadius, setBorderRadius] = useState(0);
     const [fontSize, setfontSize] = useState(12);
-    const [color, setcolor] = useState();
+    const color = '#fff';
     const code = `
 const Button = styled.button\`
     border-radius: ${borderRadius}px;
@@ -94,10 +94,7 @@ render(<Button>Test</Button>)
                         onChange={(e) => setfontSize(e.target.value)}
                     />
                     Background
-                    <ChromePicker
-                        color={color}
-                        onChange={(c) => setcolor(c.hex)}
-                    />
+                    <ColorPicker/>
                 </Grid>
             </MarginBottom>
             <LiveProvider code={code} scope={{ styled }} noInline={true}>
@@ -107,6 +104,10 @@ render(<Button>Test</Button>)
                 <LiveError />
                 <LivePreview />
             </LiveProvider>
+            <div>
+                References:
+                <a href={"https://react.semantic-ui.com/elements/button/"}>Semantic UI</a>
+            </div>
         </Page>
     );
 }
